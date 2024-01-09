@@ -10,11 +10,16 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.app.ActivityCompat
 import lab.voicetotext.ui.theme.LabVoiceToTextTheme
+import lab.voicetotext.utils.setupPermisssions
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        setupPermisssions(this)
+
         setContent {
             LabVoiceToTextTheme {
                 // A surface container using the 'background' color from the theme
