@@ -1,4 +1,4 @@
-package lab.voicetotext.ui.states
+package lab.voicetotext.data.states
 
 data class VoiceToTextParserState(
     val isSpeaking: Boolean = false,
