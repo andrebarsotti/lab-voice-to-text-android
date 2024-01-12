@@ -46,7 +46,7 @@ fun HomeScreen(
                 onClick = {
                     if (canRecord) {
                         if (!state.isSpeaking) {
-                            viewModel.stopListening()
+                            viewModel.startListening()
                         }
                         else {
                             viewModel.stopListening()
