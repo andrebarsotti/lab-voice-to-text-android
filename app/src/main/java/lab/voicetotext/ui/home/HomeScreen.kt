@@ -1,8 +1,10 @@
 package lab.voicetotext.ui.home
 
+import android.widget.Toast
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -38,6 +40,10 @@ fun HomeScreen(
     val canRecord = setupRecordPermisssions(context)
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
     val state = viewModel.voiceState.collectAsState().value
+
+    if (!state.error.isNullOrBlank()) {
+        Toast.makeText(context, state.error, Toast.LENGTH_SHORT).show()
+    }
 
     Scaffold(
         floatingActionButtonPosition = FabPosition.Center,

@@ -93,9 +93,22 @@ class VoiceToTextParser (
         if (error == SpeechRecognizer.ERROR_CLIENT) {
             return
         }
+
+        val msgError = when (error) {
+            SpeechRecognizer.ERROR_NETWORK_TIMEOUT -> "Network timeout"
+            SpeechRecognizer.ERROR_NETWORK -> "Network error"
+            SpeechRecognizer.ERROR_AUDIO -> "Audio recording error"
+            SpeechRecognizer.ERROR_SERVER -> "Server error"
+            SpeechRecognizer.ERROR_SPEECH_TIMEOUT -> "Speech input"
+            SpeechRecognizer.ERROR_NO_MATCH -> "No recognition result matched."
+            SpeechRecognizer.ERROR_RECOGNIZER_BUSY -> "RecognitionService busy"
+            SpeechRecognizer.ERROR_INSUFFICIENT_PERMISSIONS -> "Insufficient permissions"
+            else -> "Didn't understand, please try again."
+        }
+
         _state.update {
             it.copy(
-                error = "Error: $error"
+                error = "Error: $msgError"
             )
         }
     }
