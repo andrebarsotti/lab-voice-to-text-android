@@ -113,8 +113,11 @@ class VoiceToTextParser (
         }
     }
 
-    override fun onResults(results: Bundle?) {
-        // Gets recognition results
+    override fun onResults(results: Bundle?) = handleResults(results)
+
+    override fun onPartialResults(partialResults: Bundle?) = handleResults(partialResults)
+
+    private fun handleResults(results: Bundle?) {
         results
             ?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
             ?.getOrNull(0)
@@ -132,8 +135,6 @@ class VoiceToTextParser (
     override fun onRmsChanged(rmsdB: Float) = Unit
 
     override fun onBufferReceived(buffer: ByteArray?) = Unit
-
-    override fun onPartialResults(partialResults: Bundle?) = Unit
 
     override fun onEvent(eventType: Int, params: Bundle?) = Unit
 }
