@@ -100,18 +100,12 @@ fun HomeBody(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         AnimatedContent(targetState = state.isSpeaking, label = "") { isSpeaking ->
-            if (isSpeaking) {
-                Text(
-                    text = "Fale...",
-                    style = MaterialTheme.typography.titleMedium
-                )
-            }
-            else {
-                Text(
-                    text = state.spokenText.ifEmpty { "Clique no 'play' para falar" },
-                    style = MaterialTheme.typography.titleMedium
-                )
-            }
+            Text(
+                text = state.spokenText.ifEmpty {
+                    if (isSpeaking) "Fale..." else "Clique no 'play' para falar"
+                },
+                style = MaterialTheme.typography.titleMedium
+            )
         }
     }
 }
