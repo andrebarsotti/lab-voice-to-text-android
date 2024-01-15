@@ -1,6 +1,6 @@
 # Lab Voice To Text no Android
 
-No Android existe a API nativa do pacote android.speech é uma biblioteca nativa que fornece os elementos básicos para executar a tarefa de reconhecimento de fala, também conhecida como ASR (*Automatic Speech Recognition*) ou STT (*speech-to-text*). Esse é um método convencional de tratamento de fala e portanto, em geral, apenas o conjunto das palavras é obtido como resultado, isto é, *não* são identificadas pontuações de forma automática.
+No Android existe a API nativa do pacote *android.speech* é uma biblioteca nativa que fornece os elementos básicos para executar a tarefa de reconhecimento de fala, também conhecida como ASR (*Automatic Speech Recognition*) ou STT (*speech-to-text*). Esse é um método convencional de tratamento de fala e portanto, em geral, apenas o conjunto das palavras é obtido como resultado, isto é, *não* são identificadas pontuações de forma automática.
 
 Esse laboratório explora a utilização dessa biblioteca nativa para apresentar os textos que são falados pelo usuário ao clicar em um botão.
 
@@ -150,11 +150,26 @@ recognizer.setRecognitionListener(object:RecognitionListener {
 })
 ```
 
-## Referências
+## Conclusões
 
-**ANDROID API REFERENCE**: android.speech. [S. l.], [s. d.]. Disponível em: https://developer.android.com/reference/android/speech/package-summary. Acesso em: 12 jan. 2024.
+A implementação do ASR em aplicações Android Nativas com a biblioteca nativa *android.speech* provou ser extremamente simplificada e prática, sem grandes complexidades no processo. Se o dispositivo estiver corretamente configurado em testes iniciais provou-se possível o seu uso *offline*, entende-se que seja necessário solicitar que o pacote de reconhecimento de fala padrão do assistente de voz local seja baixado para esse tipo de uso.
+
+Tendo em vista sua facilidade e a ausência de pacotes adicionais entendem-se que trata-se de uma forma viável para o uso embarco da tecnologia em aplicações Android Nativas.
+
+### Possíveis estudos futuros
+
+Como desdobramentos desse lab entende-se que podem ser interessantes as seguintes linhas de pesquisa:
+
+- **Incorporar um modelo de predição de pontuação após receber o resultado**: Pesquisar uma forma de aplicar o modelo em cascata treinando um segundo modelo para a predição de pontuação ou utilizando um existente, como descrito por Casanova *et al.* (2023).
+- **Desenvolvimento de Assistentes Virtuais**: Pesquisar outras ferramentas que descrevam como montar um assistente virtual com base nas ferramentas existentes e como integrar essas ferramentas, com exemplos práticos
+
+## REFERÊNCIAS
+
+**ANDROID API REFERENCE**: android.speech. [S. l.], [s. d.]. Disponível em: <https://developer.android.com/reference/android/speech/package-summary>. Acesso em: 12 jan. 2024.
 
 ATITIENEI, D. **Voice to Text in Jetpack Compose — Android**. *In*: MEDIUM. 10 mar. 2023. Disponível em: <https://medium.com/@daniel.atitienei/voice-to-text-in-jetpack-compose-android-c1e077627abe>. Acesso em: 9 jan. 2024.
+
+CASANOVA, E. *et al*.  **Recursos para o processamento de fala**. *In:* Processamento de Linguagem Natural: Conceitos, Técnicas e Aplicações em Português. 1. ed. São Carlos: BPLN, 2023. *E-Book*. cap. 3 p. 42-63. Disponível em: <https://brasileiraspln.com/livro-pln/1a-edicao/parte2/cap3/cap3.html>. Acesso em: 15 jan. 2024.
 
 KHARE, A. **Add Voice Commands to Android Apps**. *In*: MEDIUM. GEEK CULTURE. 6 jul. 2021. Disponível em: <https://medium.com/geekculture/add-voice-commands-to-android-apps-80157c0d5bcc>. Acesso em: 9 jan. 2024.
 
