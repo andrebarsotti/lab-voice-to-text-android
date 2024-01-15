@@ -36,17 +36,18 @@ class VoiceToTextParser (
             }
         }
 
+        // Sets the listener that will receive all the callbacks
+        recognizer.setRecognitionListener(this)
+
         // Creates an Intent for speech recognition in a specified language
         val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
             putExtra(
                 RecognizerIntent.EXTRA_LANGUAGE_MODEL,
                 RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
             )
+            putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true)
             putExtra(RecognizerIntent.EXTRA_LANGUAGE, languageCode)
         }
-
-        // Sets the listener that will receive all the callbacks
-        recognizer.setRecognitionListener(this)
 
         // Starts listening for speech
         recognizer.startListening(intent)
