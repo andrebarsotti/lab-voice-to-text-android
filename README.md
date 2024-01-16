@@ -1,5 +1,12 @@
 # Lab Voice To Text no Android
 
+<div style="text-align: right;">
+
+André Claudinei Barsotti Salvadeo <br>
+
+São Paulo, 15 de janeiro de 2024
+</div>
+
 No Android existe a API nativa do pacote *android.speech* é uma biblioteca nativa que fornece os elementos básicos para executar a tarefa de reconhecimento de fala, também conhecida como ASR (*Automatic Speech Recognition*) ou STT (*speech-to-text*). Esse é um método convencional de tratamento de fala e portanto, em geral, apenas o conjunto das palavras é obtido como resultado, isto é, *não* são identificadas pontuações de forma automática.
 
 Esse laboratório explora a utilização dessa biblioteca nativa para apresentar os textos que são falados pelo usuário ao clicar em um botão.
