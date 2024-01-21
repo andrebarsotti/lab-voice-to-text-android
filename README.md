@@ -161,7 +161,7 @@ recognizer.setRecognitionListener(object:RecognitionListener {
 
 A implementação do ASR em aplicações Android Nativas com a biblioteca nativa *android.speech* provou ser extremamente simplificada e prática, sem grandes complexidades no processo. Se o dispositivo estiver corretamente configurado em testes iniciais provou-se possível o seu uso *offline*, entende-se que seja necessário solicitar que o pacote de reconhecimento de fala padrão do assistente de voz local seja baixado para esse tipo de uso.
 
-Tendo em vista sua facilidade e a ausência de pacotes adicionais entendem-se que trata-se de uma forma viável para o uso embarco da tecnologia em aplicações Android Nativas.
+Tendo em vista sua facilidade e a ausência de pacotes adicionais entendem-se que trata-se de uma forma viável para o uso embarcado da tecnologia em aplicações Android Nativas.
 
 ### Possíveis estudos futuros
 
